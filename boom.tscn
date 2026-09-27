@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqyp2stlycldo"]
+
+[ext_resource type="Script" uid="uid://c1klp2t17kygy" path="res://boom.gd" id="1_37ygf"]
+[ext_resource type="Material" uid="uid://dbl7q8vhyiaf8" path="res://boom_shader.tres" id="1_crcy4"]
+
+[sub_resource type="Curve" id="Curve_wujaq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5045752, 0.0042858124), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dji2m"]
+texture_mode = 1
+curve = SubResource("Curve_wujaq")
+
+[sub_resource type="Gradient" id="Gradient_crcy4"]
+offsets = PackedFloat32Array(0.4092827, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ssck"]
+gradient = SubResource("Gradient_crcy4")
+
+[sub_resource type="Curve" id="Curve_8l1v2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5019608, 0.17857146), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rcvye"]
+curve = SubResource("Curve_8l1v2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yvmlu"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+radial_velocity_min = 6.4999776
+radial_velocity_max = 7.4999776
+radial_velocity_curve = SubResource("CurveTexture_rcvye")
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_5ssck")
+alpha_curve = SubResource("CurveTexture_dji2m")
+
+[sub_resource type="SphereMesh" id="SphereMesh_dxn2u"]
+
+[node name="Boom" type="Node3D" unique_id=13887035]
+script = ExtResource("1_37ygf")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=716456004]
+material_override = ExtResource("1_crcy4")
+lifetime = 0.6
+explosiveness = 0.8
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_yvmlu")
+draw_pass_1 = SubResource("SphereMesh_dxn2u")

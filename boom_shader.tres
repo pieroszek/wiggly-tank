@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dbl7q8vhyiaf8"]
+
+[ext_resource type="Shader" uid="uid://infvqv30p2ap" path="res://boom.tres" id="1_s6x4n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_s6x4n")
+shader_parameter/cloud_speed = Vector2(0, 0.1)
+shader_parameter/cloud_intensity = 0.01
+shader_parameter/explossion_amt = 0.0

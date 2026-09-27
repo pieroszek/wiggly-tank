@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://q7otcvxh06a4"]
+
+[ext_resource type="Script" uid="uid://chc17777cc4yw" path="res://menu.gd" id="1_lti8b"]
+
+[sub_resource type="Theme" id="Theme_yvmlu"]
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_dxn2u"]
+default_font_size = 100
+
+[node name="Control" type="Control" unique_id=1389439403]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yvmlu")
+script = ExtResource("1_lti8b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2015350852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.74280626, 0.4588768, 0.80775553, 1)
+
+[node name="Title" type="Label" parent="." unique_id=194748884]
+layout_mode = 0
+offset_left = -4.999999
+offset_top = 137.0
+offset_right = 729.0
+offset_bottom = 274.0
+rotation = -0.19058752
+theme = SubResource("Theme_dxn2u")
+text = "WIGGLY TANKY"
+
+[node name="press enter to start game" type="Label" parent="." unique_id=2131696685]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 355.0
+offset_right = 210.0
+offset_bottom = 383.0
+text = "press enter to start game"
+
+[node name="controls" type="Label" parent="." unique_id=1784817226]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 208.0
+offset_right = 711.0
+offset_bottom = 329.0
+text = "w / s to move forwards and backwards
+a / d to rotate left and right
+space bar to shoot
+"
